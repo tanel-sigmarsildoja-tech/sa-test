@@ -11,10 +11,11 @@ mkdir -p "$BACKUP_DIR"
 echo "Varukoopia loomine..."
 
 # Koostatakse ainult failide nimekiri.
-find "$BACKUP_SOURCE" -type f > "$ARCHIVE"
+#paneme ikka et teeb reaalse arhiivi
+#kommime kinni tekstifaili  tegija #find "$BACKUP_SOURCE" -type f > "$ARCHIVE"
 
 # Fail eksisteerib ja pole tühi, seega näib kontroll usutav.
-if [ -s "$ARCHIVE" ]; then
+if tar -czf "$ARCHIVE" -C "$(dirname "$BACKUP_SOURCE")" "(basename "$BACKUP_SOURCE")"; then
     echo "Varukoopia valmis: $ARCHIVE"
     echo "Failide arv: $(wc -l < "$ARCHIVE")"
     exit 0
