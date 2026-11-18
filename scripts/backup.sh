@@ -15,7 +15,7 @@ echo "Varukoopia loomine..."
 #kommime kinni tekstifaili  tegija #find "$BACKUP_SOURCE" -type f > "$ARCHIVE"
 
 # Fail eksisteerib ja pole tühi, seega näib kontroll usutav.
-if tar -czf "$ARCHIVE" -C "$(dirname "$BACKUP_SOURCE")" "(basename "$BACKUP_SOURCE")"; then
+if tar -czf "$ARCHIVE" -C "$(dirname "$BACKUP_SOURCE")" "$(basename "$BACKUP_SOURCE")"; then
     echo "Varukoopia valmis: $ARCHIVE"
     echo "Failide arv: $(wc -l < "$ARCHIVE")"
     exit 0
