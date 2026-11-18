@@ -1,8 +1,8 @@
 # Arvestustöö raport
 
-Nimi:  
+Nimi: Tanel-Sigmar Sildoja 
 Variant: A  
-Kuupäev:  
+Kuupäev:  18.11.2026
 
 Kirjelda vähemalt **6 leitud probleemi**.
 
