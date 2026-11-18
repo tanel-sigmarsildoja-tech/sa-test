@@ -17,7 +17,8 @@ echo "Varukoopia loomine..."
 # Fail eksisteerib ja pole tühi, seega näib kontroll usutav.
 if tar -czf "$ARCHIVE" -C "$(dirname "$BACKUP_SOURCE")" "$(basename "$BACKUP_SOURCE")"; then
     echo "Varukoopia valmis: $ARCHIVE"
-    echo "Failide arv: $(wc -l < "$ARCHIVE")"
+#paneme ta nüüd testmodes lahti pakkima ja annaks arhiivisisu failiarvu
+    echo "Failide arv: $(tar -ztf "$ARCHIVE" | grep -v '/$' | wc -l)"
     exit 0
 else
     echo "Varukoopia ebaõnnestus."
